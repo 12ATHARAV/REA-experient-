@@ -6,14 +6,14 @@ export default function ClientHTML({ html, styles = '', headScripts = [], title 
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!containerRef.current) return;
-
     const titleMatch = title ? null : html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
     if (title) {
       document.title = title;
     } else if (titleMatch) {
       document.title = titleMatch[1].trim();
     }
+
+    if (!containerRef.current) return;
 
     const scripts = containerRef.current.querySelectorAll('script');
     scripts.forEach((oldScript) => {
