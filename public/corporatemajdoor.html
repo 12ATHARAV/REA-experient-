@@ -945,7 +945,7 @@
 
     <!-- 🏢 CORPORATE WORKSPACE ATMOSPHERIC BACKDROP -->
     <div class="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden bg-[#070c14]">
-      <img id="customBgImage" alt="Indian IT office cubicle workstation at twilight with cutting chai and cyber skyline" class="w-full h-full object-cover" onerror="this.style.display='none'" src="/img/corporate-desktop.jpg">
+      <img id="customBgImage" alt="Indian IT office cubicle workstation at twilight with cutting chai and cyber skyline" class="w-full h-full object-cover" onerror="this.style.display='none'" src="/img/corporate-desktop.jpg?v=2">
       <script>
         (function () {
           var img = document.getElementById('customBgImage');
@@ -954,7 +954,7 @@
           // still get the desktop banner; only real mobile phones get
           // the mobile-optimized one.
           var isMobile = /Android|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-          img.src = isMobile ? '/img/corporate-mobile.png' : '/img/corporate-desktop.jpg';
+          img.src = isMobile ? '/img/corporate-mobile.png' : '/img/corporate-desktop.jpg?v=2';
         })();
       </script>
 
