@@ -5,7 +5,7 @@
 // IMPORTANT: bump CACHE_VERSION every time you change index.html,
 // manifest.json, or any icon file, so old installs pick up the
 // update instead of serving a stale cached copy.
-const CACHE_VERSION = 'deluxe-saloon-v2';
+const CACHE_VERSION = 'deluxe-saloon-v3';
 const APP_SHELL = [
   '/',
   '/manifest.json',
