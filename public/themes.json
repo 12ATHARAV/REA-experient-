@@ -1,0 +1,46 @@
+{
+  "options": [
+    {
+      "id": "saloon",
+      "emoji": "✂️",
+      "label": "Deluxe Salon",
+      "path": "/"
+    },
+    {
+      "id": "new-theme-2",
+      "emoji": "🚌",
+      "label": "Bus Driver",
+      "path": "/busdriver"
+    },
+    {
+      "id": "new-theme-3",
+      "emoji": "🐃",
+      "label": "Bhojpuri Bangers",
+      "path": "/bhojpuri"
+    },
+    {
+      "id": "new-theme-4",
+      "emoji": " 🫧",
+      "label": "Bartan Time",
+      "path": "/bartantime"
+    },
+    {
+      "id": "new-theme-5",
+      "emoji": "🏠",
+      "label": "Raju Mistri",
+      "path": "/rajumistri"
+    },
+    {
+      "id": "new-theme-6",
+      "emoji": " 👨",
+      "label": "Papa Ke Gaane",
+      "path": "/papa"
+    },
+    {
+      "id": "new-theme-7",
+      "emoji": "💻",
+      "label": "Corporate Majdoor",
+      "path": "/corporatemajdoor"
+    }
+  ]
+}

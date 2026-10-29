@@ -1,16 +1,17 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
-  turbopack: {
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
+  async rewrites() {
+    return [
+      {
+        source: '/chat/chat_fetch.php',
+        destination: '/api/chat/fetch',
       },
-    },
+      {
+        source: '/chat/chat_send.php',
+        destination: '/api/chat/send',
+      },
+    ];
   },
 };
 
