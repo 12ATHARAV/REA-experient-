@@ -13,7 +13,6 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Deluxe Salon",
   description: "Deluxe Salon - 2000s Indian Retro Ambient Radio",
 };
 
