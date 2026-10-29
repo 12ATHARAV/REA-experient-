@@ -8,6 +8,11 @@ export default function ClientHTML({ html, styles = '', headScripts = [] }: { ht
   useEffect(() => {
     if (!containerRef.current) return;
 
+    const titleMatch = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+    if (titleMatch) {
+      document.title = titleMatch[1].trim();
+    }
+
     const scripts = containerRef.current.querySelectorAll('script');
     scripts.forEach((oldScript) => {
       const newScript = document.createElement('script');
@@ -22,7 +27,7 @@ export default function ClientHTML({ html, styles = '', headScripts = [] }: { ht
       });
       oldScript.parentNode?.replaceChild(newScript, oldScript);
     });
-  }, []);
+  }, [html]);
 
   return (
     <>
