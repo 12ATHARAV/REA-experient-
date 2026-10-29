@@ -2,13 +2,12 @@
 
 import { useEffect, useRef } from 'react';
 
-export default function ClientHTML({ html }: { html: string }) {
+export default function ClientHTML({ html, styles = '', headScripts = [] }: { html: string; styles?: string; headScripts?: string[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // Execute inline scripts
     const scripts = containerRef.current.querySelectorAll('script');
     scripts.forEach((oldScript) => {
       const newScript = document.createElement('script');
@@ -18,7 +17,6 @@ export default function ClientHTML({ html }: { html: string }) {
       } else {
         newScript.textContent = oldScript.textContent;
       }
-      // Copy attributes
       Array.from(oldScript.attributes).forEach((attr) => {
         newScript.setAttribute(attr.name, attr.value);
       });
@@ -27,6 +25,12 @@ export default function ClientHTML({ html }: { html: string }) {
   }, []);
 
   return (
-    <div ref={containerRef} dangerouslySetInnerHTML={{ __html: html }} />
+    <>
+      <div dangerouslySetInnerHTML={{ __html: styles }} />
+      {headScripts.map((script, i) => (
+        <div key={i} dangerouslySetInnerHTML={{ __html: script }} />
+      ))}
+      <div ref={containerRef} dangerouslySetInnerHTML={{ __html: html }} />
+    </>
   );
 }
