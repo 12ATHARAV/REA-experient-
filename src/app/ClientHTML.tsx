@@ -2,14 +2,16 @@
 
 import { useEffect, useRef } from 'react';
 
-export default function ClientHTML({ html, styles = '', headScripts = [] }: { html: string; styles?: string; headScripts?: string[] }) {
+export default function ClientHTML({ html, styles = '', headScripts = [], title }: { html: string; styles?: string; headScripts?: string[]; title?: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const titleMatch = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
-    if (titleMatch) {
+    const titleMatch = title ? null : html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+    if (title) {
+      document.title = title;
+    } else if (titleMatch) {
       document.title = titleMatch[1].trim();
     }
 

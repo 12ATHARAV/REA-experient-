@@ -17,5 +17,8 @@ export default function Page() {
   const headScripts = [...headContent.matchAll(/<script\b[^>]*>[\s\S]*?<\/script>/gi)]
     .map((match) => match[0]);
 
-  return <ClientHTML html={bodyContent} styles={styles} headScripts={headScripts} />;
+  const titleMatch = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+  const title = titleMatch ? titleMatch[1].trim() : undefined;
+
+  return <ClientHTML html={bodyContent} styles={styles} headScripts={headScripts} title={title} />;
 }
