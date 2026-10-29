@@ -3,7 +3,7 @@ import { join } from 'path';
 import ClientHTML from '../ClientHTML';
 
 export default function Page() {
-  const htmlPath = join(process.cwd(), 'public', 'index.html');
+  const htmlPath = join(process.cwd(), 'public', 'bhojpuri.html');
   const html = readFileSync(htmlPath, 'utf-8');
 
   const bodyMatch = html.match(/<body[^>]*>([\s\S]*)<\/body>/i);
